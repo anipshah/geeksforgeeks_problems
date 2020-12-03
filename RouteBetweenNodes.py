@@ -27,12 +27,15 @@ def is_route(graph,start,end):
     return False
 
 graph={
-   'A' : ['B','C'],
-  'B' : ['D', 'E'],
-  'C' : ['F'],
-  'D' : [],
-  'E' : ['F'],
-  'F' : []
+    "A":["B","D"],
+    "B":["A","C"],
+    "C":["B"],
+    "D":["A","E","F"],
+    "E":["D","F","G"],
+    "F":["D","E","H"],
+    "G":["E","H"],
+    "H":["G","F"]
 }
 print(is_route(graph, 'A','F')) # True
-print(is_route(graph,'A','G')) #False
+print(is_route(graph,'A','G')) # True
+print(is_graph(graph,'A','Z')) # False
